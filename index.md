@@ -21,6 +21,9 @@ data:
       path: src/data_structure/BIT.hpp
       title: BIT (Fenwick Tree)
     - icon: ':heavy_check_mark:'
+      path: src/data_structure/DSU.py
+      title: src/data_structure/DSU.py
+    - icon: ':heavy_check_mark:'
       path: src/data_structure/FastSet.hpp
       title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
   - name: src/extra
@@ -90,6 +93,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data_structure/BIT.test.cpp
       title: test/data_structure/BIT.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data_structure/DSU.test.py
+      title: test/data_structure/DSU.test.py
     - icon: ':heavy_check_mark:'
       path: test/data_structure/FastSet.test.cpp
       title: test/data_structure/FastSet.test.cpp
