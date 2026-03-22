@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/predecessor_problem"
 #include "test/template.hpp"
 using u64 = uint64_t;
-#include "src/data-structure/FastSet.hpp"
+#include "src/data_structure/FastSet.hpp"
 
 int main() {
    cin.tie(0)->sync_with_stdio(0);

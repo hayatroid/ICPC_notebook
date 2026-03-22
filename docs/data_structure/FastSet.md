@@ -1,6 +1,6 @@
 ---
 title: 高速 bitset (64 分木)
-documentation_of: //src/data-structure/FastSet.hpp
+documentation_of: //src/data_structure/FastSet.hpp
 ---
 
 - 参考実装：[Gifted Infants](https://yosupo.hatenablog.com/entry/2019/07/02/122433)

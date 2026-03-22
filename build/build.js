@@ -4,7 +4,7 @@ const fontsize = "7.4pt";       // フォントサイズ
 const orientation = "portrait";     // portrait (縦長) / landscape (横長)
 const num_columns = 2;          // 何段組みか
 const break_after_toc = "column"; // toc の後に : page (改ページする) / column (改段する) / auto (強制しない)
-const section_order = ["template", "data-structure", "math", "modint", "FPS", "graph", "graph/tree", "flow", "string", "algorithm", "geometry", "memo"];   // src/* のフォルダを読み出す順序
+const section_order = ["template", "data_structure", "math", "modint", "FPS", "graph", "graph/tree", "flow", "string", "algorithm", "geometry", "memo"];   // src/* のフォルダを読み出す順序
 
 
 

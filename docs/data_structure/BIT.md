@@ -1,6 +1,6 @@
 ---
 title: BIT (Fenwick Tree)
-documentation_of: //src/data-structure/BIT.hpp
+documentation_of: //src/data_structure/BIT.hpp
 ---
 
 - 参考実装：[AC Library](https://github.com/atcoder/ac-library/blob/8250de484ae0ab597391db58040a602e0dc1a419/atcoder/fenwicktree.hpp)
