@@ -34,6 +34,7 @@
     <li><a class="section" href="#data_structure">data_structure</a></li>
     <ol>
     <li><a href="#BIT.hpp">BIT.hpp</a></li>
+    <li><a href="#DSU.py">DSU.py</a></li>
     <li><a href="#FastSet.hpp">FastSet.hpp</a></li>
     </ol>
     <li><a class="section" href="#math">math</a></li>
@@ -161,6 +162,26 @@ sys<span class="token punctuation">.</span>setrecursionlimit<span class="token p
       <span class="token keyword">return</span> <span class="token function">sum</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">sum</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</div>
+
+    <div class="filename">
+        <h2 id="DSU.py">DSU.py</h2>
+        md5: 01d3ae
+    </div>
+    <div class="content content-py">
+    <pre><code><span class="token keyword">class</span> <span class="token class-name">DSU</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>par <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">find</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> self<span class="token punctuation">.</span>par<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">!=</span> x<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>par<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>par<span class="token punctuation">[</span>self<span class="token punctuation">.</span>par<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">]</span>
+            x <span class="token operator">=</span> self<span class="token punctuation">.</span>par<span class="token punctuation">[</span>x<span class="token punctuation">]</span>
+        <span class="token keyword">return</span> x
+    <span class="token keyword">def</span> <span class="token function">unite</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>par<span class="token punctuation">[</span>self<span class="token punctuation">.</span>find<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>find<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">same</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>find<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">==</span> self<span class="token punctuation">.</span>find<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
 </code></pre>
 </div>
 
