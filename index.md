@@ -1,11 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: build
-    pages:
-    - icon: ':warning:'
-      path: build/hash.py
-      title: build/hash.py
   - name: src/FPS
     pages:
     - icon: ':heavy_check_mark:'
@@ -65,9 +60,6 @@ data:
       title: Z Algorithm
   - name: src/template
     pages:
-    - icon: ':warning:'
-      path: src/template/hash.py
-      title: src/template/hash.py
     - icon: ':warning:'
       path: src/template/template.hpp
       title: src/template/template.hpp
