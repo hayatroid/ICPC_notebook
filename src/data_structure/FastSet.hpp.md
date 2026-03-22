@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/FastSet.test.cpp
-    title: test/data-structure/FastSet.test.cpp
+    path: test/data_structure/FastSet.test.cpp
+    title: test/data_structure/FastSet.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/data-structure/FastSet.hpp\"\n// using u64 = uint64_t;\n\
+  bundledCode: "#line 1 \"src/data_structure/FastSet.hpp\"\n// using u64 = uint64_t;\n\
     const u64 B = 64;\nstruct FastSet {\n   u64 n;\n   vector<vector<u64>> a;\n  \
     \ FastSet(u64 n_) : n(n_) {\n      do a.emplace_back(n_ = (n_ + B - 1) / B);\n\
     \      while(n_ > 1);\n   }\n   // bool operator[](ll i) const { return a[0][i\
@@ -49,13 +49,13 @@ data:
     };\n"
   dependsOn: []
   isVerificationFile: false
-  path: src/data-structure/FastSet.hpp
+  path: src/data_structure/FastSet.hpp
   requiredBy: []
-  timestamp: '2024-02-23 23:49:40+09:00'
+  timestamp: '2026-03-22 11:45:48+00:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/FastSet.test.cpp
-documentation_of: src/data-structure/FastSet.hpp
+  - test/data_structure/FastSet.test.cpp
+documentation_of: src/data_structure/FastSet.hpp
 layout: document
 title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
 ---

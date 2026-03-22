@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/BIT.test.cpp
-    title: test/data-structure/BIT.test.cpp
+    path: test/data_structure/BIT.test.cpp
+    title: test/data_structure/BIT.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/data-structure/BIT.hpp\"\nstruct BIT {\n   vector<ll>\
+  bundledCode: "#line 1 \"src/data_structure/BIT.hpp\"\nstruct BIT {\n   vector<ll>\
     \ a;\n   BIT(ll n) : a(n + 1) {}\n   void add(ll i, ll x) {  // A[i] += x\n  \
     \    i++;\n      while(i < sz(a)) {\n         a[i] += x;\n         i += i & -i;\n\
     \      }\n   }\n   ll sum(ll r) {\n      ll s = 0;\n      while(r) {\n       \
@@ -25,13 +25,13 @@ data:
     \ sum(r) - sum(l);\n   }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: src/data-structure/BIT.hpp
+  path: src/data_structure/BIT.hpp
   requiredBy: []
-  timestamp: '2024-02-23 08:47:21+09:00'
+  timestamp: '2026-03-22 11:45:48+00:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/BIT.test.cpp
-documentation_of: src/data-structure/BIT.hpp
+  - test/data_structure/BIT.test.cpp
+documentation_of: src/data_structure/BIT.hpp
 layout: document
 title: BIT (Fenwick Tree)
 ---

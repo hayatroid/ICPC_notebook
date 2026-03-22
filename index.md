@@ -15,13 +15,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/FPS/FFT_fast.hpp
       title: FFT (bit reversal ver.)
-  - name: src/data-structure
+  - name: src/data_structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: src/data-structure/BIT.hpp
+      path: src/data_structure/BIT.hpp
       title: BIT (Fenwick Tree)
     - icon: ':heavy_check_mark:'
-      path: src/data-structure/FastSet.hpp
+      path: src/data_structure/FastSet.hpp
       title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
   - name: src/extra
     pages:
@@ -85,14 +85,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/FPS/FFT_fast.test.cpp
       title: test/FPS/FFT_fast.test.cpp
-  - name: test/data-structure
+  - name: test/data_structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/BIT.test.cpp
-      title: test/data-structure/BIT.test.cpp
+      path: test/data_structure/BIT.test.cpp
+      title: test/data_structure/BIT.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/FastSet.test.cpp
-      title: test/data-structure/FastSet.test.cpp
+      path: test/data_structure/FastSet.test.cpp
+      title: test/data_structure/FastSet.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

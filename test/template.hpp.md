@@ -10,11 +10,11 @@ data:
     path: test/FPS/FFT_fast.test.cpp
     title: test/FPS/FFT_fast.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/BIT.test.cpp
-    title: test/data-structure/BIT.test.cpp
+    path: test/data_structure/BIT.test.cpp
+    title: test/data_structure/BIT.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/FastSet.test.cpp
-    title: test/data-structure/FastSet.test.cpp
+    path: test/data_structure/FastSet.test.cpp
+    title: test/data_structure/FastSet.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/BinaryGCD.test.cpp
     title: test/math/BinaryGCD.test.cpp
@@ -109,8 +109,8 @@ data:
   - test/string/Manacher.test.cpp
   - test/string/LCP.test.cpp
   - test/string/Zalgorithm.test.cpp
-  - test/data-structure/FastSet.test.cpp
-  - test/data-structure/BIT.test.cpp
+  - test/data_structure/FastSet.test.cpp
+  - test/data_structure/BIT.test.cpp
   - test/modint/modint.test.cpp
   - test/modint/BarrettReduction.test.cpp
   - test/math/ExtGCD.test.cpp

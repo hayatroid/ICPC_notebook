@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/data-structure/FastSet.hpp
+    path: src/data_structure/FastSet.hpp
     title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
   - icon: ':heavy_check_mark:'
     path: test/template.hpp
@@ -17,14 +17,14 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/predecessor_problem
     links:
     - https://judge.yosupo.jp/problem/predecessor_problem
-  bundledCode: "#line 1 \"test/data-structure/FastSet.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"test/data_structure/FastSet.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/predecessor_problem\"\n#line 1 \"test/template.hpp\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nconst\
     \ ll INF = LLONG_MAX / 4;\n#define rep(i, a, b) for(ll i = a; i < (b); i++)\n\
     #define all(a) begin(a), end(a)\n#define sz(a) ssize(a)\nbool chmin(auto& a, auto\
     \ b) { return a > b ? a = b, 1 : 0; }\nbool chmax(auto& a, auto b) { return a\
-    \ < b ? a = b, 1 : 0; }\n#line 3 \"test/data-structure/FastSet.test.cpp\"\nusing\
-    \ u64 = uint64_t;\n#line 1 \"src/data-structure/FastSet.hpp\"\n// using u64 =\
+    \ < b ? a = b, 1 : 0; }\n#line 3 \"test/data_structure/FastSet.test.cpp\"\nusing\
+    \ u64 = uint64_t;\n#line 1 \"src/data_structure/FastSet.hpp\"\n// using u64 =\
     \ uint64_t;\nconst u64 B = 64;\nstruct FastSet {\n   u64 n;\n   vector<vector<u64>>\
     \ a;\n   FastSet(u64 n_) : n(n_) {\n      do a.emplace_back(n_ = (n_ + B - 1)\
     \ / B);\n      while(n_ > 1);\n   }\n   // bool operator[](ll i) const { return\
@@ -41,7 +41,7 @@ data:
     \    rep(h, 0, sz(a)) {\n         i--;\n         if(i < 0) break;\n         u64\
     \ d = a[h][i / B] << (~i % B);\n         if(d) {\n            i -= countl_zero(d);\n\
     \            while(h--) i = i * B + __lg(a[h][i]);\n            return i;\n  \
-    \       }\n         i /= B;\n      }\n      return -1;\n   }\n};\n#line 5 \"test/data-structure/FastSet.test.cpp\"\
+    \       }\n         i /= B;\n      }\n      return -1;\n   }\n};\n#line 5 \"test/data_structure/FastSet.test.cpp\"\
     \n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   ll N, Q;\n   cin >> N\
     \ >> Q;\n   string S;\n   cin >> S;\n   FastSet s(N);\n   rep(i, 0, N) if(S[i]\
     \ == '1') s.set(i);\n   while(Q--) {\n      ll c, k;\n      cin >> c >> k;\n \
@@ -50,7 +50,7 @@ data:
     \ ans = s.next(k - 1);\n         cout << (ans == N ? -1 : ans) << '\\n';\n   \
     \   }\n      if(c == 4) cout << s.prev(k + 1) << '\\n';\n   }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/predecessor_problem\"\n\
-    #include \"test/template.hpp\"\nusing u64 = uint64_t;\n#include \"src/data-structure/FastSet.hpp\"\
+    #include \"test/template.hpp\"\nusing u64 = uint64_t;\n#include \"src/data_structure/FastSet.hpp\"\
     \n\nint main() {\n   cin.tie(0)->sync_with_stdio(0);\n   ll N, Q;\n   cin >> N\
     \ >> Q;\n   string S;\n   cin >> S;\n   FastSet s(N);\n   rep(i, 0, N) if(S[i]\
     \ == '1') s.set(i);\n   while(Q--) {\n      ll c, k;\n      cin >> c >> k;\n \
@@ -60,17 +60,17 @@ data:
     \   }\n      if(c == 4) cout << s.prev(k + 1) << '\\n';\n   }\n}\n"
   dependsOn:
   - test/template.hpp
-  - src/data-structure/FastSet.hpp
+  - src/data_structure/FastSet.hpp
   isVerificationFile: true
-  path: test/data-structure/FastSet.test.cpp
+  path: test/data_structure/FastSet.test.cpp
   requiredBy: []
-  timestamp: '2024-05-31 19:00:40+09:00'
+  timestamp: '2026-03-22 11:45:48+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/FastSet.test.cpp
+documentation_of: test/data_structure/FastSet.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/FastSet.test.cpp
-- /verify/test/data-structure/FastSet.test.cpp.html
-title: test/data-structure/FastSet.test.cpp
+- /verify/test/data_structure/FastSet.test.cpp
+- /verify/test/data_structure/FastSet.test.cpp.html
+title: test/data_structure/FastSet.test.cpp
 ---
