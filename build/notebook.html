@@ -26,9 +26,9 @@
             
     <li><a class="section" href="#template">template</a></li>
     <ol>
-    <li><a href="#hash.sh">hash.sh</a></li>
+    <li><a href="#hash.py">hash.py</a></li>
     <li><a href="#settings.sh">settings.sh</a></li>
-    <li><a href="#template.hpp">template.hpp</a></li>
+    <li><a href="#template.py">template.py</a></li>
     </ol>
     <li><a class="section" href="#data-structure">data-structure</a></li>
     <ol>
@@ -85,12 +85,17 @@
     <h2 class="section" id="template">template</h2>
 
     <div class="filename">
-        <h2 id="hash.sh">hash.sh</h2>
+        <h2 id="hash.py">hash.py</h2>
+        md5: 14abff
     </div>
-    <div class="content content-sh">
-    <pre><code><span class="token comment"># 使い方: sh hash.sh -> コピペ -> Ctrl + D</span>
-<span class="token comment"># コメント・空白・改行を削除して md5 でハッシュする</span>
-g++ <span class="token parameter variable">-dD</span> <span class="token parameter variable">-E</span> <span class="token parameter variable">-P</span> <span class="token parameter variable">-fpreprocessed</span> - <span class="token operator">|</span> <span class="token function">tr</span> <span class="token parameter variable">-d</span> <span class="token string">'[:space:]'</span> <span class="token operator">|</span> md5sum <span class="token operator">|</span> <span class="token function">cut</span> -c-6
+    <div class="content content-py">
+    <pre><code><span class="token comment"># 使い方: uv run hash.py -> コピペ -> Ctrl + D</span>
+<span class="token comment"># コメント・空白・改行を無視して AST ベースで md5 ハッシュする</span>
+<span class="token keyword">import</span> ast<span class="token punctuation">,</span> hashlib<span class="token punctuation">,</span> sys
+ 
+tree <span class="token operator">=</span> ast<span class="token punctuation">.</span>parse<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+dump <span class="token operator">=</span> ast<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>tree<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span>dump<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span>
 </code></pre>
 </div>
 
@@ -107,25 +112,15 @@ setxkbmap <span class="token parameter variable">-option</span> ctrl:nocaps
 </div>
 
     <div class="filename">
-        <h2 id="template.hpp">template.hpp</h2>
-        md5: 136d85
-
+        <h2 id="template.py">template.py</h2>
+        md5: 61e08b
     </div>
-    <div class="content content-hpp">
-    <pre><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">using</span> ll <span class="token operator">=</span> <span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> ll INF <span class="token operator">=</span> LLONG_MAX <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">rep</span><span class="token expression"><span class="token punctuation">(</span>i<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token keyword">for</span><span class="token punctuation">(</span>ll i <span class="token operator">=</span> a<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">all</span><span class="token expression"><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token function">begin</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">end</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name function">sz</span><span class="token expression"><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token function">ssize</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span></span></span>
-<span class="token keyword">bool</span> <span class="token function">chmin</span><span class="token punctuation">(</span><span class="token keyword">auto</span><span class="token operator">&amp;</span> a<span class="token punctuation">,</span> <span class="token keyword">auto</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">></span> b <span class="token operator">?</span> a <span class="token operator">=</span> b<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-<span class="token keyword">bool</span> <span class="token function">chmax</span><span class="token punctuation">(</span><span class="token keyword">auto</span><span class="token operator">&amp;</span> a<span class="token punctuation">,</span> <span class="token keyword">auto</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">&lt;</span> b <span class="token operator">?</span> a <span class="token operator">=</span> b<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <div class="content content-py">
+    <pre><code><span class="token keyword">import</span> sys
+<span class="token builtin">input</span> <span class="token operator">=</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>readline
+sys<span class="token punctuation">.</span>setrecursionlimit<span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">20</span><span class="token punctuation">)</span>
  
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">-></span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token comment">// your code here...</span>
-<span class="token punctuation">}</span>
+<span class="token comment"># your code here...</span>
 </code></pre>
 </div>
 
@@ -133,8 +128,6 @@ setxkbmap <span class="token parameter variable">-option</span> ctrl:nocaps
 
     <div class="filename">
         <h2 id="BIT.hpp">BIT.hpp</h2>
-        md5: 8133c8
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token keyword">struct</span> <span class="token class-name">BIT</span> <span class="token punctuation">{</span>
@@ -164,8 +157,6 @@ setxkbmap <span class="token parameter variable">-option</span> ctrl:nocaps
 
     <div class="filename">
         <h2 id="FastSet.hpp">FastSet.hpp</h2>
-        md5: 2cb8c9
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// using u64 = uint64_t;</span>
@@ -227,8 +218,6 @@ setxkbmap <span class="token parameter variable">-option</span> ctrl:nocaps
 
     <div class="filename">
         <h2 id="BinaryGCD.hpp">BinaryGCD.hpp</h2>
-        md5: f3ab31
-
     </div>
     <div class="content content-hpp">
     <pre><code>u64 <span class="token function">ctz</span><span class="token punctuation">(</span>u64 x<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token function">countr_zero</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
@@ -247,8 +236,6 @@ u64 <span class="token function">binary_gcd</span><span class="token punctuation
 
     <div class="filename">
         <h2 id="ExtGCD.hpp">ExtGCD.hpp</h2>
-        md5: c3fa9b
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// returns gcd(a, b) and assign x, y to integers</span>
@@ -267,8 +254,6 @@ ll <span class="token function">extgcd</span><span class="token punctuation">(</
 
     <div class="filename">
         <h2 id="BarrettReduction.hpp">BarrettReduction.hpp</h2>
-        md5: 2ca7f3
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// using u64 = uint64_t;</span>
@@ -289,8 +274,6 @@ ll <span class="token function">extgcd</span><span class="token punctuation">(</
 
     <div class="filename">
         <h2 id="modint.hpp">modint.hpp</h2>
-        md5: 81b530
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token keyword">const</span> ll mod <span class="token operator">=</span> <span class="token number">998244353</span><span class="token punctuation">;</span>
@@ -326,8 +309,6 @@ ll <span class="token function">extgcd</span><span class="token punctuation">(</
 
     <div class="filename">
         <h2 id="FFT.hpp">FFT.hpp</h2>
-        md5: 3138c7
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// {998244353, 3}, {1811939329, 13}, {2013265921, 31}</span>
@@ -370,8 +351,6 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
 
     <div class="filename">
         <h2 id="FFT_fast.hpp">FFT_fast.hpp</h2>
-        md5: c8c567
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// modint を u32 にして加減算を真面目にやると速い</span>
@@ -491,8 +470,6 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
 
     <div class="filename">
         <h2 id="KMP.hpp">KMP.hpp</h2>
-        md5: 886c63
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// kmp[i] := max{ l ≤ i | s[:l] == s[(i+1)-l:i+1] }</span>
@@ -511,8 +488,6 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
 
     <div class="filename">
         <h2 id="Manacher.hpp">Manacher.hpp</h2>
-        md5: 5882fb
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// 各位置での回文半径を求める</span>
@@ -539,8 +514,6 @@ vector<span class="token operator">&lt;</span>mm<span class="token operator">></
 
     <div class="filename">
         <h2 id="RollingHash.hpp">RollingHash.hpp</h2>
-        md5: adb8d3
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// using u64 = uint64_t;</span>
@@ -572,8 +545,6 @@ random_device rnd<span class="token punctuation">;</span>
 
     <div class="filename">
         <h2 id="SuffixArray.hpp">SuffixArray.hpp</h2>
-        md5: 1d70ce
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// returns pair{sa, lcp}</span>
@@ -614,8 +585,6 @@ random_device rnd<span class="token punctuation">;</span>
 
     <div class="filename">
         <h2 id="Zalgorithm.hpp">Zalgorithm.hpp</h2>
-        md5: b20b04
-
     </div>
     <div class="content content-hpp">
     <pre><code><span class="token comment">// Z[i] := LCP(s, s[i:])</span>
