@@ -17,9 +17,8 @@ data:
   code: "# \u4F7F\u3044\u65B9: uv run hash.py -> \u30B3\u30D4\u30DA -> Ctrl + D\n\
     # \u30B3\u30E1\u30F3\u30C8\u30FB\u7A7A\u767D\u30FB\u6539\u884C\u3092\u7121\u8996\
     \u3057\u3066 AST \u30D9\u30FC\u30B9\u3067 md5 \u30CF\u30C3\u30B7\u30E5\u3059\u308B\
-    \nimport ast, hashlib, sys\n\nif __name__ == \"__main__\":\n    tree = ast.parse(sys.stdin.read())\n\
-    \    dump = ast.dump(tree)\n    print(hashlib.md5(dump.encode()).hexdigest()[:6],\
-    \ end=\"\")\n"
+    \nimport ast, hashlib, sys\n\ntree = ast.parse(sys.stdin.read())\ndump = ast.dump(tree)\n\
+    print(hashlib.md5(dump.encode()).hexdigest()[:6], end=\"\")\n"
   dependsOn: []
   isVerificationFile: false
   path: src/template/hash.py
