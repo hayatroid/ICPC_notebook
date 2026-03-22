@@ -1,1 +1,2 @@
 online-judge-verify-helper
+setuptools<82
