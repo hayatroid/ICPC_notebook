@@ -69,8 +69,8 @@ data:
       path: src/template/hash.py
       title: src/template/hash.py
     - icon: ':warning:'
-      path: src/template/template.hpp
-      title: src/template/template.hpp
+      path: src/template/template.py
+      title: src/template/template.py
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
