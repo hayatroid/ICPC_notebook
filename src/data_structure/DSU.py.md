@@ -26,14 +26,14 @@ data:
   isVerificationFile: false
   path: src/data_structure/DSU.py
   requiredBy: []
-  timestamp: '2026-03-22 11:50:10+00:00'
+  timestamp: '2026-03-22 17:27:42+00:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data_structure/DSU.test.py
 documentation_of: src/data_structure/DSU.py
 layout: document
-redirect_from:
-- /library/src/data_structure/DSU.py
-- /library/src/data_structure/DSU.py.html
-title: src/data_structure/DSU.py
+title: "\u624B\u629C\u304D DSU"
 ---
+
+秒で実装したいときに使う
+[Path Halving](https://37zigen.com/union-find/#Path_Halving) が非再帰で書きやすい

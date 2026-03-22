@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/data_structure/DSU.py
-    title: src/data_structure/DSU.py
+    title: "\u624B\u629C\u304D DSU"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -29,7 +29,7 @@ data:
   isVerificationFile: true
   path: test/data_structure/DSU.test.py
   requiredBy: []
-  timestamp: '2026-03-22 11:50:10+00:00'
+  timestamp: '2026-03-22 17:27:42+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data_structure/DSU.test.py

@@ -22,7 +22,7 @@ data:
       title: BIT (Fenwick Tree)
     - icon: ':heavy_check_mark:'
       path: src/data_structure/DSU.py
-      title: src/data_structure/DSU.py
+      title: "\u624B\u629C\u304D DSU"
     - icon: ':heavy_check_mark:'
       path: src/data_structure/FastSet.hpp
       title: "\u9AD8\u901F bitset (64 \u5206\u6728)"
