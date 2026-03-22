@@ -16,7 +16,9 @@ data:
     , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: 'import sys
 
-    sys.setrecursionlimit(10**6)
+    input = sys.stdin.readline
+
+    sys.setrecursionlimit(1 << 20)
 
 
     # your code here...
@@ -26,7 +28,7 @@ data:
   isVerificationFile: false
   path: src/template/template.py
   requiredBy: []
-  timestamp: '2026-03-22 04:58:36+00:00'
+  timestamp: '2026-03-22 05:01:26+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/template/template.py
